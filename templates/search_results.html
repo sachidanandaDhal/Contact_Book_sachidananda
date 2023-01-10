@@ -1,0 +1,46 @@
+
+
+{% include 'base.html' %}
+{% include 'header.html' %}
+
+
+
+{% block body %}
+
+
+<div class="container" style="background-color: rgb(9, 255, 0);">
+  <table class="table">
+    <thead style="background-color: rgb(28, 28, 29);color: rgb(61, 253, 3);">
+         <th>ID</th>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Email</th>
+         <th>Phone</th>
+         <th>Gender</th>
+         <th>Hobbies</th>
+         <th>Country</th>
+     </thead>
+ 
+    <tbody>
+     {% for contact in contacts %}
+     <tr
+     {% if loop.index %2==0 %}
+     style="background-color: rgb(185, 182, 185);"
+     {% else %}
+     style="background-color: rgb(177, 176, 177);"
+     {% endif %}
+     ><td>{{contact.id }}</td>
+     <td>{{contact.first_name}}</td>
+     <td>{{contact.last_name}}</td>
+     <td>{{contact.email}}</td>
+     <td>{{contact.phone}}</td>
+     <td>{{contact.gender}}</td>
+     <td>{{contact.hobbies}}</td>
+     <td>{{contact.country}}</td>
+     {% endfor %}
+    </tbody>
+  </table>
+   
+ </div>
+
+{% endblock %}
